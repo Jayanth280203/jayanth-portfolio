@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jayanth's Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0f172a;
+      color: #f8fafc;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(10px);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 50;
+    }
+    nav a {
+      color: #f8fafc;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #38bdf8;
+    }
+    .section {
+      padding: 100px 20px;
+    }
+    .highlight {
+      color: #38bdf8;
+    }
+    .card {
+      background-color: #1e293b;
+      border-radius: 12px;
+      padding: 20px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+    footer {
+      background-color: #1e293b;
+      text-align: center;
+      padding: 20px;
+      color: #94a3b8;
+    }
+    #menu {
+      display: none;
+    }
+    @media (max-width: 768px) {
+      #menu {
+        display: block;
+      }
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #0f172a;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        border-radius: 0 0 8px 8px;
+      }
+      nav ul.active {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="shadow-lg">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <h1 class="text-2xl font-semibold"><span class="highlight">Jayanth</span> R</h1>
+      <div id="menu" class="text-3xl cursor-pointer">&#9776;</div>
+      <nav>
+        <ul class="flex space-x-6">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="about" class="section text-center">
+    <h2 class="text-4xl font-semibold mb-4">About Me</h2>
+    <p class="max-w-2xl mx-auto text-gray-300">
+      Hi! I'm <span class="highlight">Jayanth R</span>, a passionate Data Science student with skills in Python, R, MATLAB, LaTeX, MySQL, and more.
+      I love exploring data, building insights, and creating intelligent solutions using AI and machine learning.
+    </p>
+  </section>
+
+  <section id="skills" class="section bg-gray-900 text-center">
+    <h2 class="text-4xl font-semibold mb-8">Skills</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
+      <div class="card">Python</div>
+      <div class="card">R</div>
+      <div class="card">MATLAB</div>
+      <div class="card">LaTeX</div>
+      <div class="card">MySQL</div>
+      <div class="card">HTML & CSS</div>
+      <div class="card">Microsoft 365</div>
+      <div class="card">C Programming</div>
+    </div>
+  </section>
+
+  <section id="projects" class="section text-center">
+    <h2 class="text-4xl font-semibold mb-8">Projects</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      <div class="card">
+        <h3 class="text-2xl font-semibold mb-2">PDF Question Answering System</h3>
+        <p>A machine learning chatbot that answers user queries from uploaded PDF documents.</p>
+      </div>
+      <div class="card">
+        <h3 class="text-2xl font-semibold mb-2">AI-Powered Climate Change Analyzer</h3>
+        <p>Analyzes and predicts climate change impacts using AI-driven data visualizations.</p>
+      </div>
+      <div class="card">
+        <h3 class="text-2xl font-semibold mb-2">World’s Trending YouTube Channels (Tableau)</h3>
+        <p>Dashboard analysis of YouTube trends and channel growth patterns.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section bg-gray-900 text-center">
+    <h2 class="text-4xl font-semibold mb-4">Contact Me</h2>
+    <p class="text-gray-300 mb-4">Let's connect! Feel free to reach out for collaborations or opportunities.</p>
+    <a href="mailto:jayanthr@example.com" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg shadow-lg transition">Email Me</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Jayanth R. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const menu = document.getElementById('menu');
+    const navList = document.querySelector('nav ul');
+    menu.addEventListener('click', () => {
+      navList.classList.toggle('active');
+    });
+
+    // Prevent body scroll when mobile menu is open
+    navList.addEventListener('transitionend', () => {
+      if (navList.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
