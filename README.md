@@ -23,12 +23,6 @@ A personal **Portfolio Website** built using **HTML5**, **CSS3**, **JavaScript**
 
 ---
 
-## 🖼️ Sneak Peek
-Here’s a preview of my portfolio design 👇  
-*(Replace with your own screenshots)*
-
-## 🖼️ Sneak Peek
-Here’s a preview of my portfolio 👇  
 
 ## 🖼️ Sneak Peek  
 Here’s a preview of my portfolio 👇  
