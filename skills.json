@@ -1,7 +1,7 @@
 [
     {
         "name": "Tableau",
-        "icon": "https://icons8.com/icon/9Kvi1p1F0tUo/tableau-software"
+        "icon": "./assets/images/skills/tableau.png"
     },
     {
         "name": "Power BI",
