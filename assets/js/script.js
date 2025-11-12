@@ -151,3 +151,60 @@ document.onkeydown = function (e) {
         return false;
     }
 };
+/* ===== Certifications flip-card JS (append to end of script.js) ===== */
+(function () {
+  const grid = document.getElementById('certsGrid');
+  if (!grid) return;
+
+  // Toggle flip on click/tap (works for mobile)
+  grid.addEventListener('click', function (e) {
+    // if clicked on Open Image link, do nothing (let link work)
+    const target = e.target;
+    if (target.tagName.toLowerCase() === 'a') return;
+
+    // find the .cert-card ancestor
+    const card = target.closest('.cert-card');
+    if (!card) return;
+
+    // toggle flip state
+    card.classList.toggle('is-flipped');
+  });
+
+  // Keyboard accessibility: Enter/Space toggles, Escape unflips
+  grid.addEventListener('keydown', function (e) {
+    const card = e.target.closest && e.target.closest('.cert-card');
+    if (!card) return;
+
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      card.classList.toggle('is-flipped');
+    } else if (e.key === 'Escape') {
+      card.classList.remove('is-flipped');
+    }
+  });
+
+  // make cards focusable for keyboard users
+  document.querySelectorAll('.cert-card').forEach(c => {
+    c.setAttribute('tabindex', '0');
+  });
+
+  // clicking outside the grid closes any flipped cards
+  document.addEventListener('click', function (ev) {
+    if (!grid.contains(ev.target)) {
+      document.querySelectorAll('.cert-card.is-flipped').forEach(c => c.classList.remove('is-flipped'));
+    }
+  });
+
+  // Optional: prevent the hover flip on small screens (so mobile relies on tap)
+  function toggleHoverOnTouch() {
+    if (window.matchMedia('(hover: none)').matches) {
+      // remove hover transform by overriding pointer-events via class:
+      document.querySelectorAll('.cert-card').forEach(c => {
+        c.classList.remove('hover-enabled');
+      });
+    }
+  }
+  toggleHoverOnTouch();
+  window.addEventListener('resize', toggleHoverOnTouch);
+
+})();
