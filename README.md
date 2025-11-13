@@ -2,7 +2,8 @@
 
 A personal **Portfolio Website** built using **HTML5**, **CSS3**, **JavaScript**, and **jQuery** showcasing my skills, education, and achievements in the field of **Data Science** and **Data Analytics**.
 
-<a href="https://your-portfolio-link.netlify.app/" target="_blank">🚀 **Visit Now**</a>
+<a href="https://jayanth280203.github.io/jayanth-portfolio/" target="_blank">🚀 **Visit Now**</a>
+
 
 ---
 
