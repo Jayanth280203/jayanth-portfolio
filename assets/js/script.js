@@ -71,7 +71,7 @@ document.addEventListener('visibilitychange', function () {
 
 // --- Typing text animation ---
 var typed = new Typed(".typing-text", {
-    strings: ["Data Scientist", "Data Analyst", "Business Analyst"],
+    strings: ["Data Scientist", "Data Analyst", "Data Engineer", "Database Administrator", "Business Analyst"],
     loop: true,
     typeSpeed: 50,
     backSpeed: 25,
