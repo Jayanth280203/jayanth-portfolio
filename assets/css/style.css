@@ -1497,18 +1497,3 @@ h1, h2, h3, h4, p, span, li {
   background: var(--primary) !important;
   color: #fff !important;
 }
-
-/* Theme Toggle Button */
-#theme-toggle {
-  position: absolute;
-  right: 25px;
-  top: 18px;
-  font-size: 2rem;
-  cursor: pointer;
-  color: var(--primary);
-  transition: 0.3s ease;
-}
-
-#theme-toggle:hover {
-  transform: scale(1.2);
-}
