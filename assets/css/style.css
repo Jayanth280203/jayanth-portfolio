@@ -1565,3 +1565,8 @@ form .button-area {
     left: -3px;
   }
 }
+#certifications {
+    background-color: #F5F2FF;   /* soft lavender */
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
