@@ -543,5 +543,22 @@ document.addEventListener("DOMContentLoaded", function () {
   items.forEach(item => observer.observe(item));
 });
     </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  
+  const certCards = document.querySelectorAll(".cert-card");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  }, { threshold: 0.2 });
+
+  certCards.forEach(card => observer.observe(card));
+
+});
+</script>
 </body>
 </html>
