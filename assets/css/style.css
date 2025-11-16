@@ -1570,171 +1570,135 @@ form .button-area {
     padding-top: 60px;
     padding-bottom: 60px;
 }
-/* -------------------------
-   Projects timeline + neon card styles
-   Paste at the end of style.css
-   ------------------------- */
+/* PROJECT SECTION FULL FIXED TIMELINE */
 
-/* Container spacing */
 .projects {
   padding: 6rem 2rem;
-  background: #f6f7fb; /* gentle page background, adjust if needed */
+  background: #f3f5fa;
 }
 
-/* Heading keep as-is but ensure spacing from timeline */
 .projects .heading {
   text-align: center;
-  margin-bottom: 3.2rem;
+  margin-bottom: 3rem;
 }
 
-/* TIMELINE wrapper */
+/* Center Vertical Timeline */
 .timeline {
   position: relative;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding-left: 120px;    /* space for the vertical line and dot */
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem 0;
 }
 
-/* Vertical line (left-of-cards).
-   If you later want zigzag, we can replace the background with an SVG. */
 .timeline::before {
   content: "";
   position: absolute;
-  left: 62px;            /* center of line relative to padding-left */
-  top: 20px;
-  bottom: 20px;
-  width: 6px;
-  background: linear-gradient(to bottom, #6a00f4, #3a00c1); /* purple gradient line */
-  border-radius: 4px;
-  box-shadow: 0 0 18px rgba(58,0,193,0.12), 0 0 34px rgba(106,0,244,0.06);
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #3b00a9;
+  box-shadow: 0 0 12px rgba(59,0,169,0.5);
+  border-radius: 10px;
 }
 
-/* Each timeline item (wraps .content) */
+/* Each Item */
 .timeline-item {
-  position: relative;       /* for the dot pseudo-element */
-  margin: 2.4rem 0;
-  min-height: 120px;
-}
-
-/* The project card container inside the timeline item */
-.timeline-item .content {
   position: relative;
-  background: #ffffff;
-  border-radius: 14px;
-  padding: 26px 28px;
-  box-shadow: 0 6px 22px rgba(4, 12, 36, 0.06);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  border: 2px solid rgba(0, 153, 255, 0.12); /* subtle border fallback */
-  overflow: hidden;
+  width: 50%;
+  padding: 2rem 0;
 }
 
-/* NEON blue glow outline (all 4 sides) */
-.timeline-item .content {
-  /* neon border + layered glow */
-  border: 2px solid rgba(0,153,255,0.55);
-  box-shadow:
-    0 6px 20px rgba(0,0,0,0.08),
-    0 0 10px rgba(0,153,255,0.12),
-    0 0 28px rgba(0,153,255,0.08),
-    inset 0 1px 0 rgba(255,255,255,0.02);
-}
-
-/* Hover intensifies neon */
-.timeline-item .content:hover {
-  transform: translateY(-6px);
-  box-shadow:
-    0 16px 40px rgba(4,12,36,0.14),
-    0 0 28px rgba(0,153,255,0.28),
-    0 0 72px rgba(0,153,255,0.12);
-  border-color: rgba(0,153,255,0.9);
-}
-
-/* The dot — dark red circle aligned to middle of timeline item */
-.timeline-item::before {
-  content: "";
+/* 🌟 Red Dot in Center */
+.timeline-dot {
   position: absolute;
-  left: 46px;                /* place dot slightly left of line center */
+  left: 50%;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translate(-50%, -50%);
   width: 22px;
   height: 22px;
-  background: #8b0000; /* dark red */
+  background: #8b0000;
   border-radius: 50%;
-  border: 4px solid #fff;   /* white ring */
-  box-shadow:
-    0 2px 6px rgba(0,0,0,0.18),
-    0 0 10px rgba(139,0,0,0.25);
-  z-index: 2;
+  border: 4px solid #fff;
+  box-shadow: 0 0 14px rgba(139,0,0,0.6);
+  z-index: 10;
 }
 
-/* Ensure the dot does not overlap card content on small screens */
-@media (max-width: 900px) {
-  .timeline {
-    padding-left: 88px;
-  }
-  .timeline::before { left: 46px; width: 5px; }
-  .timeline-item::before { left: 30px; }
-  .timeline-item .content { padding: 20px; }
+/* Card Position Alternating Left/Right */
+.timeline-item:nth-child(odd) {
+  left: 0;
 }
 
-/* If you have .left/.right classes (keeps left layout consistent) */
-.timeline-item.left .content {
-  margin-left: 0; /* content sits to the right of the line */
+.timeline-item:nth-child(even) {
+  left: 50%;
 }
 
-/* Tools tags styling inside card (chips) */
-.timeline-item .tools {
+/* Card Design */
+.timeline-item .content {
+  background: #fff;
+  padding: 20px 25px;
+  border-radius: 14px;
+  border: 2px solid rgba(0,153,255,0.4);
+  box-shadow: 0 4px 20px rgba(0,153,255,0.3);
+  width: 85%;
+  transition: 0.3s;
+}
+
+.timeline-item:nth-child(odd) .content {
+  margin-left: auto;
+}
+
+.timeline-item:nth-child(even) .content {
+  margin-right: auto;
+}
+
+/* Neon Hover */
+.timeline-item .content:hover {
+  box-shadow: 0 0 25px rgba(0,153,255,0.8);
+}
+
+/* Tags */
+.tools {
   list-style: none;
-  padding: 0;
-  margin: 12px 0 18px 0;
   display: flex;
-  flex-wrap: wrap;
   gap: 10px;
+  flex-wrap: wrap;
+  margin: 10px 0 15px 0;
 }
-.timeline-item .tools li {
-  background: #eef5ff;
-  color: #0b2b57;
+.tools li {
+  background: #e8f1ff;
   padding: 6px 10px;
-  font-size: 1.25rem;
   border-radius: 8px;
-  box-shadow: inset 0 -1px 0 rgba(0,0,0,0.02);
 }
 
-/* Project button */
+/* Button */
 .project-btn {
-  display: inline-block;
-  margin-top: 8px;
-  padding: 12px 20px;
-  background: #3210cc;
+  padding: 10px 15px;
+  background: #4a00e0;
   color: #fff;
   border-radius: 10px;
   text-decoration: none;
   font-weight: 600;
-  box-shadow: 0 6px 18px rgba(50,16,204,0.18);
-  transition: background 0.18s ease, transform 0.18s;
-}
-.project-btn:hover {
-  background: #1a06a6;
-  transform: translateY(-3px);
 }
 
-/* Coming soon text center */
-.coming-soon {
-  text-align: center;
-  margin-top: 3rem;
-  padding-bottom: 3rem;
-}
-.coming-soon p {
-  font-size: 2.0rem;
-  color: #4f2fa6;
-  font-weight: 700;
-}
+/* Mobile View */
+@media(max-width: 768px) {
+  .timeline-item {
+    width: 100%;
+  }
 
-/* Small screens: compress spacing */
-@media (max-width: 520px) {
-  .timeline { padding-left: 64px; }
-  .timeline::before { left: 42px; }
-  .timeline-item::before { left: 28px; }
-  .timeline-item .content { padding: 18px; }
-  .projects { padding: 3rem 1rem; }
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline-dot {
+    left: 20px;
+  }
+
+  .timeline-item .content {
+    width: 90%;
+    margin-left: 50px !important;
+    margin-right: 0 !important;
+  }
 }
