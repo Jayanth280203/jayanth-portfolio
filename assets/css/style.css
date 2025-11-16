@@ -1435,3 +1435,133 @@ form .button-area {
   .cert-inner { min-height: 18rem; }
   .cert-back ul { font-size: 1.15rem; }
 }
+/* Project Timeline Zig-Zag Layout */
+.projects {
+  background: #f5f7ff;
+  padding-top: 5rem;
+}
+
+.timeline {
+  position: relative;
+  margin: 5rem auto;
+  padding: 2rem 0;
+  max-width: 900px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  background: #4a00e0;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  padding: 2rem;
+  position: relative;
+  width: 50%;
+}
+
+.timeline-item .content {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.timeline-item .content:hover {
+  transform: scale(1.03);
+}
+
+.timeline-item.left {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-item.right {
+  left: 50%;
+}
+
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: #ffae00;
+  border-radius: 50%;
+  top: 25px;
+  z-index: 10;
+}
+
+.timeline-item.left::after {
+  right: -9px;
+}
+
+.timeline-item.right::after {
+  left: -9px;
+}
+
+.project-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  background: #2506ad;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.project-btn:hover {
+  background: #1a047e;
+}
+
+.tools {
+  margin: 1rem 0;
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tools li {
+  background: #e5ecfb;
+  padding: 0.4rem 1rem;
+  border-radius: 0.4rem;
+  font-size: 1.2rem;
+}
+
+/* Coming Soon */
+.coming-soon {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #4a00e0;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 8px;
+  }
+  .timeline-item {
+    width: 100%;
+    padding-left: 3rem;
+  }
+  .timeline-item.left,
+  .timeline-item.right {
+    text-align: left;
+    left: 0;
+  }
+  .timeline-item.left::after,
+  .timeline-item.right::after {
+    left: -3px;
+  }
+}
