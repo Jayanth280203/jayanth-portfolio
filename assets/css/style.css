@@ -1571,3 +1571,15 @@ form .button-area {
     margin-left: 60px;    /* move cards right */
   }
 }
+/* ===== Scroll Animation Base State ===== */
+.timeline-item {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.8s ease-out;
+}
+
+/* ===== When item becomes visible ===== */
+.timeline-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
