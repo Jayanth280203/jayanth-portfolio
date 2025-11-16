@@ -208,3 +208,25 @@ document.onkeydown = function (e) {
   window.addEventListener('resize', toggleHoverOnTouch);
 
 })();
+// ===== Scroll Reveal Animation =====
+
+// Certificates Flip Cards
+ScrollReveal({
+    reset: true,        // animation repeats every scroll
+    distance: '60px',
+    duration: 1200,
+    easing: 'ease-out',
+    origin: 'bottom'
+}).reveal('.cert-card', {
+    interval: 150       // delay between each card
+});
+
+// Project Timeline Cards
+ScrollReveal({
+    reset: true,
+    distance: '80px',
+    duration: 1300,
+    easing: 'ease-out'
+}).reveal('.timeline-item', {
+    interval: 200
+});
