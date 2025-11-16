@@ -1594,3 +1594,9 @@ form .button-area {
   opacity: 1;
   transform: translateY(0);
 }
+/* ===== Certifications Section Background (Lavender) ===== */
+#certifications.certifications {
+    background: #E6E6FA;   /* Lavender */
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
