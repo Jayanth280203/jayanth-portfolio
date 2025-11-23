@@ -32,7 +32,6 @@ Here’s a preview of my portfolio 👇
 
 ![portfolio-preview-2](https://github.com/Jayanth280203/jayanth-portfolio/blob/main/profile_preview2.png?raw=true)
 
-
 ---
 
 ## 📬 Contact
