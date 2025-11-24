@@ -1528,6 +1528,28 @@ form .button-area {
   box-shadow: 0 5px 20px rgba(0,0,0,0.1), 0 0 25px rgba(0,153,255,0.2);
   transition: 0.3s ease-in-out;
 }
+/* === Increase Text Size in Project Cards === */
+.timeline-item .content h3 {
+  font-size: 1.9rem;     /* Title of project */
+  font-weight: 700;
+}
+
+.timeline-item .content p {
+  font-size: 1.45rem;    /* Description text */
+  line-height: 1.55;
+  text-transform: none;
+}
+
+.timeline-item .content a {
+  font-size: 1.35rem;    /* View Project link */
+  font-weight: 600;
+}
+
+/* Tools/Skills Tags */
+.tools li {
+  font-size: 1.35rem;
+  font-weight: 600;
+}
 
 .timeline-item .content:hover {
   transform: translateY(-5px);
