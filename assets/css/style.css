@@ -1528,6 +1528,11 @@ form .button-area {
   box-shadow: 0 5px 20px rgba(0,0,0,0.1), 0 0 25px rgba(0,153,255,0.2);
   transition: 0.3s ease-in-out;
 }
+/* === GitHub Icon Styling === */
+.timeline-item .content a i {
+  margin-right: 8px;
+  font-size: 1.5rem;
+}
 /* === Increase Text Size in Project Cards === */
 .timeline-item .content h3 {
   font-size: 1.9rem;     /* Title of project */
