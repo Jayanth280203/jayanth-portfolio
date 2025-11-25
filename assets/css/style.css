@@ -1470,13 +1470,15 @@ form .button-area {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 50%;                     /* EXACT center */
+  left: 50%;
   transform: translateX(-50%);
   width: 4px;
   background: linear-gradient(to bottom, #6a00f4, #3a00c1);
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(106,0,244,0.45);
+  pointer-events: none;
 }
+
 
 /* --- PROJECT ITEM --- */
 .timeline-item {
