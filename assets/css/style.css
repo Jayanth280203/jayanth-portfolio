@@ -1629,19 +1629,3 @@ form .button-area {
     padding-top: 60px;
     padding-bottom: 60px;
 }
-/* === GROUP BOX FOR CERTIFICATIONS (Similar to Skills Container) === */
-.certs-wrapper-box {
-    background: rgba(0, 0, 22, 0.1);
-    border-radius: 1.5rem;
-    padding: 2rem;
-    margin: auto;
-    width: 90%;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-    transition: all 0.3s ease-in-out;
-}
-
-/* When hovered, entire certifications box reacts */
-.certs-wrapper-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.25);
-}
