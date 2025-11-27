@@ -76,6 +76,7 @@ var typed = new Typed(".typing-text", {
     typeSpeed: 50,
     backSpeed: 25,
     backDelay: 500,
+    showCursor: false
 });
 
 // --- Fetch skills only (disabled projects for now) ---
