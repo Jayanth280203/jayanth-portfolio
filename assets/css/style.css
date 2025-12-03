@@ -1921,6 +1921,7 @@ form .button-area {
 .hidden-projects.show {
   max-height: 2000px;
   /* Enough to fit all projects */
+  overflow: visible;
 }
 
 .view-all-container {
