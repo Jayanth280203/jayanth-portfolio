@@ -1788,3 +1788,34 @@ form .button-area {
   }
 
 }
+.hidden-projects {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.8s ease-in-out;
+}
+
+.hidden-projects.show {
+  max-height: 2000px; /* Enough to fit all projects */
+}
+
+.view-all-container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+#viewAllBtn {
+  background: #2506ad;
+  color: #fff;
+  padding: 1.3rem 3rem;
+  border-radius: 8px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0px 5px 15px rgba(48, 68, 247, 0.5);
+  transition: 0.3s;
+}
+
+#viewAllBtn:hover {
+  background: #1c0484;
+}
