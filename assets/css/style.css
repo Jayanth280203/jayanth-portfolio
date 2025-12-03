@@ -1735,7 +1735,7 @@ form .button-area {
 
 .projects .timeline-item .content p,
 .projects .timeline-item .content ul li {
-    font-size: 1.7rem !important;   /* Bullet points + Description */
+    font-size: 1.9rem !important;   /* Bullet points + Description */
     line-height: 2.7rem;
 }
 
