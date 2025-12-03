@@ -1724,3 +1724,30 @@ form .button-area {
     left: 12px !important;
   }
 }
+/* Fix Double Timeline Line in Projects on Mobile */
+@media screen and (max-width: 768px) {
+
+  /* Force timeline line to the center only */
+  .projects .timeline::after {
+    left: 20px !important;   /* move it to the left */
+  }
+
+  /* Make all timeline cards align left */
+  .projects .timeline-item {
+    width: 100% !important;
+    padding-left: 50px !important;
+    padding-right: 0 !important;
+  }
+
+  /* Remove the second purple line caused by left/right styles */
+  .projects .timeline-item.left::before,
+  .projects .timeline-item.right::before {
+    display: none !important;
+  }
+
+  /* Remove indentation that creates the illusion of a second line */
+  .projects .timeline-item.left,
+  .projects .timeline-item.right {
+    transform: translateX(0) !important;
+  }
+}
