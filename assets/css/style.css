@@ -1629,3 +1629,98 @@ form .button-area {
     padding-top: 60px;
     padding-bottom: 60px;
 }
+/* ------------------------------------------
+   FIX PROJECT TIMELINE ALIGNMENT
+------------------------------------------- */
+
+/* Timeline base */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: auto;
+  padding: 50px 0;
+}
+
+/* Center vertical line */
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  background: #7d2cff;   /* Purple color */
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Timeline item box */
+.timeline-item {
+  padding: 20px 40px;
+  position: relative;
+  width: 50%;
+}
+
+/* LEFT CARD */
+.timeline-item.left {
+  left: 0;
+}
+
+/* RIGHT CARD */
+.timeline-item.right {
+  left: 50%;
+}
+
+/* Card container */
+.timeline-item .content {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  text-align: left !important; /* Key Fix */
+}
+
+/* Fix LEFT card unwanted spacing */
+.timeline-item.left .content {
+  margin-left: 0 !important;
+  padding-left: 20px !important;
+  text-align: left !important;
+}
+
+/* Node (circle dot) */
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: #7d2cff;
+  border-radius: 50%;
+  top: 25px;
+  z-index: 5;
+}
+
+/* Circle position left / right */
+.timeline-item.left::before {
+  right: -9px;
+}
+.timeline-item.right::before {
+  left: -9px;
+}
+
+/* Mobile responsive fix */
+@media (max-width: 768px) {
+
+  .timeline::after {
+    left: 20px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    left: 0 !important;
+    padding-left: 60px;
+    padding-right: 20px;
+  }
+
+  .timeline-item::before {
+    left: 12px !important;
+  }
+}
