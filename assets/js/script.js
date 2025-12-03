@@ -80,11 +80,68 @@ var typed = new Typed(".typing-text", {
 });
 
 // --- Fetch skills only (disabled projects for now) ---
-async function fetchData(type = "skills") {
-    let response = await fetch("skills.json");
-    const data = await response.json();
-    return data;
-}
+const skills = [
+    {
+        "name": "Tableau",
+        "icon": "https://img.icons8.com/color/48/000000/tableau-software.png"
+    },
+    {
+        "name": "Power BI",
+        "icon": "https://img.icons8.com/color/48/000000/power-bi.png"
+    },
+    {
+        "name": "Google Analytics",
+        "icon": "https://img.icons8.com/?size=48&id=avtI03bQMwX3&format=png"
+    },
+    {
+        "name": "Python",
+        "icon": "https://img.icons8.com/color/48/000000/python--v1.png"
+    },
+    {
+        "name": "R",
+        "icon": "https://img.icons8.com/external-becris-flat-becris/64/000000/external-r-data-science-becris-flat-becris.png"
+    },
+    {
+        "name": "C",
+        "icon": "https://img.icons8.com/color/48/000000/c-programming.png"
+    },
+    {
+        "name": "MongoDB",
+        "icon": "https://img.icons8.com/color/48/000000/mongodb.png"
+    },
+    {
+        "name": "MySQL",
+        "icon": "https://img.icons8.com/color/48/000000/mysql-logo.png"
+    },
+    {
+        "name": "Git",
+        "icon": "https://img.icons8.com/?size=48&id=20906&format=png"
+    },
+    {
+        "name": "GitHub",
+        "icon": "https://img.icons8.com/glyph-neue/48/ffffff/github.png"
+    },
+    {
+        "name": "MATLAB",
+        "icon": "https://img.icons8.com/?size=48&id=r5Y16PcDkoWI&format=png"
+    },
+    {
+        "name": "Apache Hadoop",
+        "icon": "https://img.icons8.com/?size=48&id=69132&format=png"
+    },
+    {
+        "name": "Apache Sapark",
+        "icon": "https://img.icons8.com/?size=48&id=0cRqPqlItA0E&format=png"
+    },
+    {
+        "name": "MS Office",
+        "icon": "https://img.icons8.com/color/48/000000/office-365.png"
+    },
+    {
+        "name": "HTML",
+        "icon": "https://img.icons8.com/color/48/000000/html-5--v1.png"
+    }
+];
 
 function showSkills(skills) {
     let skillsContainer = document.getElementById("skillsContainer");
@@ -101,9 +158,7 @@ function showSkills(skills) {
     skillsContainer.innerHTML = skillHTML;
 }
 
-fetchData().then(data => {
-    showSkills(data);
-});
+showSkills(skills);
 
 // --- Initialize tilt effect ---
 VanillaTilt.init(document.querySelectorAll(".tilt"), { max: 15 });
@@ -136,7 +191,10 @@ srtop.reveal('.skills .container .bar', { delay: 400 });
 srtop.reveal('.education .box', { interval: 200 });
 
 // Projects section (updated from #work)
-srtop.reveal('.projects .box', { interval: 200 });
+srtop.reveal('.projects .timeline-item', { interval: 200 });
+
+// Certifications section
+srtop.reveal('.cert-card', { interval: 200 });
 
 // Contact section
 srtop.reveal('.contact .container', { delay: 400 });
@@ -154,80 +212,59 @@ document.onkeydown = function (e) {
 };
 /* ===== Certifications flip-card JS (append to end of script.js) ===== */
 (function () {
-  const grid = document.getElementById('certsGrid');
-  if (!grid) return;
+    const grid = document.getElementById('certsGrid');
+    if (!grid) return;
 
-  // Toggle flip on click/tap (works for mobile)
-  grid.addEventListener('click', function (e) {
-    // if clicked on Open Image link, do nothing (let link work)
-    const target = e.target;
-    if (target.tagName.toLowerCase() === 'a') return;
+    // Toggle flip on click/tap (works for mobile)
+    grid.addEventListener('click', function (e) {
+        // if clicked on Open Image link, do nothing (let link work)
+        const target = e.target;
+        if (target.tagName.toLowerCase() === 'a') return;
 
-    // find the .cert-card ancestor
-    const card = target.closest('.cert-card');
-    if (!card) return;
+        // find the .cert-card ancestor
+        const card = target.closest('.cert-card');
+        if (!card) return;
 
-    // toggle flip state
-    card.classList.toggle('is-flipped');
-  });
+        // toggle flip state
+        card.classList.toggle('is-flipped');
+    });
 
-  // Keyboard accessibility: Enter/Space toggles, Escape unflips
-  grid.addEventListener('keydown', function (e) {
-    const card = e.target.closest && e.target.closest('.cert-card');
-    if (!card) return;
+    // Keyboard accessibility: Enter/Space toggles, Escape unflips
+    grid.addEventListener('keydown', function (e) {
+        const card = e.target.closest && e.target.closest('.cert-card');
+        if (!card) return;
 
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      card.classList.toggle('is-flipped');
-    } else if (e.key === 'Escape') {
-      card.classList.remove('is-flipped');
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            card.classList.toggle('is-flipped');
+        } else if (e.key === 'Escape') {
+            card.classList.remove('is-flipped');
+        }
+    });
+
+    // make cards focusable for keyboard users
+    document.querySelectorAll('.cert-card').forEach(c => {
+        c.setAttribute('tabindex', '0');
+    });
+
+    // clicking outside the grid closes any flipped cards
+    document.addEventListener('click', function (ev) {
+        if (!grid.contains(ev.target)) {
+            document.querySelectorAll('.cert-card.is-flipped').forEach(c => c.classList.remove('is-flipped'));
+        }
+    });
+
+    // Optional: prevent the hover flip on small screens (so mobile relies on tap)
+    function toggleHoverOnTouch() {
+        if (window.matchMedia('(hover: none)').matches) {
+            // remove hover transform by overriding pointer-events via class:
+            document.querySelectorAll('.cert-card').forEach(c => {
+                c.classList.remove('hover-enabled');
+            });
+        }
     }
-  });
-
-  // make cards focusable for keyboard users
-  document.querySelectorAll('.cert-card').forEach(c => {
-    c.setAttribute('tabindex', '0');
-  });
-
-  // clicking outside the grid closes any flipped cards
-  document.addEventListener('click', function (ev) {
-    if (!grid.contains(ev.target)) {
-      document.querySelectorAll('.cert-card.is-flipped').forEach(c => c.classList.remove('is-flipped'));
-    }
-  });
-
-  // Optional: prevent the hover flip on small screens (so mobile relies on tap)
-  function toggleHoverOnTouch() {
-    if (window.matchMedia('(hover: none)').matches) {
-      // remove hover transform by overriding pointer-events via class:
-      document.querySelectorAll('.cert-card').forEach(c => {
-        c.classList.remove('hover-enabled');
-      });
-    }
-  }
-  toggleHoverOnTouch();
-  window.addEventListener('resize', toggleHoverOnTouch);
+    toggleHoverOnTouch();
+    window.addEventListener('resize', toggleHoverOnTouch);
 
 })();
-// ===== Scroll Reveal Animation =====
 
-// Certificates Flip Cards
-ScrollReveal({
-    reset: true,        // animation repeats every scroll
-    distance: '60px',
-    duration: 1200,
-    easing: 'ease-out',
-    origin: 'bottom'
-}).reveal('.cert-card', {
-    interval: 150       // delay between each card
-});
-
-// Project Timeline Cards
-ScrollReveal({
-    reset: true,
-    distance: '80px',
-    duration: 1300,
-    easing: 'ease-out'
-}).reveal('.timeline-item', {
-    interval: 200
-});
