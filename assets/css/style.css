@@ -1795,3 +1795,8 @@ form .button-area {
 #viewAllBtn:hover {
   background: #1c0484;
 }
+.projects .timeline {
+  border-left: 4px solid #7a28ff;
+  margin-left: 20px;
+  padding-left: 20px;
+}
