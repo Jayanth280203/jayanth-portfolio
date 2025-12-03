@@ -1750,4 +1750,41 @@ form .button-area {
   .projects .timeline-item.right {
     transform: translateX(0) !important;
   }
+}/* FULL FIX – Remove double timeline lines in MOBILE */
+@media screen and (max-width: 768px) {
+
+  /* Remove both before & after line generators */
+  .projects .timeline::before,
+  .projects .timeline::after {
+    display: none !important;
+  }
+
+  /* Align every project card to full-width */
+  .projects .timeline-item {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Remove left/right arrow indicators */
+  .projects .timeline-item.left::before,
+  .projects .timeline-item.right::before {
+    display: none !important;
+  }
+
+  /* Remove auto shifting */
+  .projects .timeline-item.left,
+  .projects .timeline-item.right {
+    transform: none !important;
+  }
+
+  /* OPTIONAL: Add a single clean line on the left */
+  .projects .timeline {
+    border-left: 4px solid #7a28ff; /* purple line */
+    margin-left: 20px;
+    padding-left: 20px;
+  }
+
 }
