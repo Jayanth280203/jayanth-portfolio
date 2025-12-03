@@ -1724,3 +1724,28 @@ form .button-area {
     left: 12px !important;
   }
 }
+/* ------------------------------------------
+   PROJECT SECTION FONT SIZE ENHANCEMENT
+------------------------------------------- */
+
+.projects .timeline-item .content h3 {
+    font-size: 2.3rem !important;   /* Title */
+    font-weight: 700;
+}
+
+.projects .timeline-item .content p,
+.projects .timeline-item .content ul li {
+    font-size: 1.7rem !important;   /* Bullet points + Description */
+    line-height: 2.7rem;
+}
+
+.projects .timeline-item .content .tools li {
+    font-size: 1.45rem !important;  /* Tags */
+    padding: 4px 12px;
+}
+
+.projects .timeline-item .project-btn,
+.projects .timeline-item .btn-container a {
+    font-size: 1.7rem !important;   /* View Project button */
+    font-weight: 600;
+}
