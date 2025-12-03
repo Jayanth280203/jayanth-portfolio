@@ -1541,8 +1541,8 @@ form .button-area {
   font-weight: 700;
 }
 
-.timeline-item .content p {
-  font-size: 1.45rem;    /* Description text */
+.timeline-item .content li {
+  font-size: 1.60rem;    /* Description text */
   line-height: 1.55;
   text-transform: none;
 }
