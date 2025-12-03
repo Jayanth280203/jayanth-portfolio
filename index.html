@@ -492,7 +492,9 @@
             </a>
         </div>
     </div>
-           <!-- PROJECT 4-->
+       
+    <div class="timeline hidden-projects">  
+      <!-- PROJECT 4-->
       <div class="timeline-item right">
     <div class="content">
       <ul>  
@@ -526,11 +528,11 @@
 
   </div>
 
+  </div>  
+    <div class="view-all-container">
+  <button id="viewAllBtn">View All Projects</button>
+    </div>
     
-
-  <div class="coming-soon">
-    <p>More Exciting Projects Coming Soon...</p>
-  </div>
 </section>
 <!-- Projects Section Ends -->
           
@@ -645,5 +647,17 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+document.getElementById("viewAllBtn").addEventListener("click", function () {
+    const hiddenSection = document.querySelector(".hidden-projects");
+    hiddenSection.classList.toggle("show");
+
+    if (hiddenSection.classList.contains("show")) {
+        this.textContent = "Show Less";
+    } else {
+        this.textContent = "View All Projects";
+    }
+});
+    </script>
 </body>
 </html>
