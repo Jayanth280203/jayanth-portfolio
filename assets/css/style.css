@@ -1464,21 +1464,7 @@ form .button-area {
   margin: auto;
 }
 
-/* --- VERTICAL LINE (CENTERED) --- */
-.timeline::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 4px;
-  background: linear-gradient(to bottom, #6a00f4, #3a00c1);
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(106,0,244,0.45);
-  pointer-events: none;
-}
-
+/
 
 /* --- PROJECT ITEM --- */
 .timeline-item {
@@ -1641,17 +1627,7 @@ form .button-area {
   padding: 50px 0;
 }
 
-/* Center vertical line */
-.timeline::after {
-  content: "";
-  position: absolute;
-  width: 4px;
-  background: #7d2cff;   /* Purple color */
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
+
 
 /* Timeline item box */
 .timeline-item {
