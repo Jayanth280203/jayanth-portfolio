@@ -1762,8 +1762,23 @@ form .button-area {
 
 .timeline-item .content a {
   font-size: 1.35rem;
-  /* View Project link */
   font-weight: 600;
+  display: inline-block;
+  padding: 10px 20px;
+  background: #2506ad;
+  color: #fff;
+  border-radius: 25px;
+  text-decoration: none;
+  margin-top: 15px;
+  box-shadow: 0 4px 10px rgba(37, 6, 173, 0.3);
+  transition: 0.3s;
+}
+
+.timeline-item .content a:hover {
+  background: #1a047e;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(37, 6, 173, 0.4);
+  color: #fff;
 }
 
 /* Tools/Skills Tags */
@@ -1818,30 +1833,7 @@ form .button-area {
   }
 }
 
-/* ===== Scroll Animation Base State ===== */
-.timeline-item {
-  opacity: 0;
-  transform: translateY(60px);
-  transition: all 0.8s ease-out;
-}
 
-/* ===== When item becomes visible ===== */
-.timeline-item.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ===== Scroll Reveal Animation for Certifications ===== */
-.cert-card {
-  opacity: 0;
-  transform: translateY(60px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.cert-card.show {
-  opacity: 1;
-  transform: translateY(0);
-}
 
 /* ===== Certifications Section Background (Lavender) ===== */
 #certifications.certifications {
@@ -1974,6 +1966,7 @@ form .button-area {
   width: 4px;
   background: #7a28ff;
   transform: translateX(-50%);
+  z-index: 1;
 }
 
 /* Desktop card positions */
@@ -1981,6 +1974,7 @@ form .button-area {
   width: 50%;
   position: relative;
   margin-bottom: 60px;
+  z-index: 2;
 }
 
 .projects .timeline-item.left {
@@ -1995,9 +1989,48 @@ form .button-area {
   text-align: left;
 }
 
-/* Dot removal */
+/* Timeline Icon (Emoji) */
 .projects .timeline-item::before {
-  display: none !important;
+  position: absolute;
+  top: 20px;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border: 4px solid #7a28ff;
+  border-radius: 50%;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  box-shadow: 0 0 10px rgba(122, 40, 255, 0.5);
+}
+
+/* Specific Emojis per Project */
+.p-youtube::before {
+  content: "📺";
+}
+
+.p-smartphone::before {
+  content: "📱";
+}
+
+.p-pdf::before {
+  content: "🤖";
+}
+
+.p-churn::before {
+  content: "📊";
+}
+
+.projects .timeline-item.left::before {
+  right: -22px;
+  /* Centered on the 4px line (half of 40px + 2px) */
+}
+
+.projects .timeline-item.right::before {
+  left: -22px;
+  /* Centered on the 4px line */
 }
 
 /* -------------------------
@@ -2006,9 +2039,16 @@ form .button-area {
 @media (max-width: 768px) {
 
   /* Remove centered line */
-  .projects .timeline::after,
-  .projects .timeline::before {
+  .projects .timeline::after {
     display: none;
+  }
+
+  /* Ensure icon is visible in mobile */
+  .projects .timeline-item::before {
+    display: flex !important;
+    left: -42px !important;
+    /* Position relative to item content (20px padding + 22px offset) */
+    right: auto !important;
   }
 
   /* Add a clean left vertical line */
