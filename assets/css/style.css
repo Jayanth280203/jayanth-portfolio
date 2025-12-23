@@ -571,12 +571,16 @@ header .navbar ul li a:hover {
 }
 
 .skills .container .bar {
-  margin-bottom: 15px;
-  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0;
+  padding: 1rem;
   border-radius: 1rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   background: rgba(0, 0, 22, 0.9);
   transition: 0.2s;
+  height: auto;
+  min-height: 13rem;
 }
 
 .skills .container .bar:hover {
@@ -588,19 +592,33 @@ header .navbar ul li a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  margin-top: 1rem;
+  gap: 0.8rem;
+  justify-content: center;
+  flex: 1;
+}
+
+.skills .container .bar .info img {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+  margin-top: auto;
+}
+
+.skills .container .bar .info img[alt="Apache Spark"] {
+  height: 64px;
 }
 
 .skills .container .bar .info i {
-  font-size: 4rem;
+  font-size: 3.8rem;
 }
 
 .skills .container .bar .info span {
-  font-size: 2rem;
+  font-size: 1.7rem;
   font-weight: 500;
   font-family: "Poppins";
-  margin-left: 0.5rem;
+  margin-top: auto;
+  margin-bottom: 0.5rem;
+  text-align: center;
 }
 
 /* skills media queries starts*/
