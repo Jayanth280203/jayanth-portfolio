@@ -79,69 +79,16 @@ var typed = new Typed(".typing-text", {
     showCursor: false
 });
 
-// --- Fetch skills only (disabled projects for now) ---
-const skills = [
-    {
-        "name": "Tableau",
-        "icon": "https://img.icons8.com/color/48/000000/tableau-software.png"
-    },
-    {
-        "name": "Power BI",
-        "icon": "https://img.icons8.com/color/48/000000/power-bi.png"
-    },
-    {
-        "name": "Google Analytics",
-        "icon": "https://img.icons8.com/?size=48&id=avtI03bQMwX3&format=png"
-    },
-    {
-        "name": "Python",
-        "icon": "https://img.icons8.com/color/48/000000/python--v1.png"
-    },
-    {
-        "name": "R",
-        "icon": "https://img.icons8.com/external-becris-flat-becris/64/000000/external-r-data-science-becris-flat-becris.png"
-    },
-    {
-        "name": "C",
-        "icon": "https://img.icons8.com/color/48/000000/c-programming.png"
-    },
-    {
-        "name": "MongoDB",
-        "icon": "https://img.icons8.com/color/48/000000/mongodb.png"
-    },
-    {
-        "name": "MySQL",
-        "icon": "https://img.icons8.com/color/48/000000/mysql-logo.png"
-    },
-    {
-        "name": "Git",
-        "icon": "https://img.icons8.com/?size=48&id=20906&format=png"
-    },
-    {
-        "name": "GitHub",
-        "icon": "https://img.icons8.com/glyph-neue/48/ffffff/github.png"
-    },
-    {
-        "name": "MATLAB",
-        "icon": "https://img.icons8.com/?size=48&id=r5Y16PcDkoWI&format=png"
-    },
-    {
-        "name": "Apache Hadoop",
-        "icon": "https://img.icons8.com/?size=48&id=69132&format=png"
-    },
-    {
-        "name": "Apache Sapark",
-        "icon": "https://img.icons8.com/?size=48&id=0cRqPqlItA0E&format=png"
-    },
-    {
-        "name": "MS Office",
-        "icon": "https://img.icons8.com/color/48/000000/office-365.png"
-    },
-    {
-        "name": "HTML",
-        "icon": "https://img.icons8.com/color/48/000000/html-5--v1.png"
+// --- Fetch skills from json ---
+async function fetchSkills() {
+    try {
+        const response = await fetch("skills.json");
+        const data = await response.json();
+        showSkills(data);
+    } catch (error) {
+        console.error("Error fetching skills:", error);
     }
-];
+}
 
 function showSkills(skills) {
     let skillsContainer = document.getElementById("skillsContainer");
@@ -158,7 +105,7 @@ function showSkills(skills) {
     skillsContainer.innerHTML = skillHTML;
 }
 
-showSkills(skills);
+fetchSkills();
 
 // --- Initialize tilt effect ---
 VanillaTilt.init(document.querySelectorAll(".tilt"), { max: 15 });
