@@ -16,8 +16,12 @@
     "icon": "https://img.icons8.com/color/48/000000/python--v1.png"
   },
   {
-    "name": "R",
-    "icon": "https://img.icons8.com/external-becris-flat-becris/64/000000/external-r-data-science-becris-flat-becris.png"
+  "name": "TensorFlow",
+  "icon": "https://img.icons8.com/?size=48&id=n3QRpDA7KZ7P&format=png"
+  },
+  {
+    "name": "MySQL",
+    "icon": "https://img.icons8.com/color/48/000000/mysql-logo.png"
   },
   {
     "name": "C",
@@ -28,8 +32,8 @@
     "icon": "https://img.icons8.com/color/48/000000/mongodb.png"
   },
   {
-    "name": "MySQL",
-    "icon": "https://img.icons8.com/color/48/000000/mysql-logo.png"
+    "name": "R",
+    "icon": "https://img.icons8.com/external-becris-flat-becris/64/000000/external-r-data-science-becris-flat-becris.png"
   },
   {
     "name": "Git",
