@@ -82,8 +82,10 @@ header {
 }
 
 section {
-  min-height: 100vh;
-  padding: 2rem 9%;
+  min-height: auto;
+  /* Changed from 100vh */
+  padding: 8rem 9% 4rem 9%;
+  /* Increased top padding for navbar clearance */
 }
 
 .heading {
@@ -211,7 +213,8 @@ header .navbar ul li a:hover {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
-  min-height: 100vh;
+  min-height: 60vh;
+  /* Reduced from 100vh */
   align-items: center;
 }
 
@@ -545,8 +548,10 @@ header .navbar ul li a:hover {
 
 /* skills section starts */
 .skills {
-  min-height: 90vh;
+  min-height: auto;
+  /* Reduced from 90vh */
   background: linear-gradient(to bottom, #57059e, #4a00e0);
+  padding-bottom: 5rem;
 }
 
 .skills h2 {
@@ -654,7 +659,8 @@ header .navbar ul li a:hover {
   background-image: radial-gradient(#e0e7ff 1.5px, transparent 1.5px);
   background-size: 30px 30px;
   /* Subtle dot pattern for structure */
-  min-height: 80vh;
+  min-height: auto;
+  /* Reduced from 80vh */
   padding-bottom: 5rem;
 }
 
@@ -1067,7 +1073,7 @@ header .navbar ul li a:hover {
 /* Media queries - Responsive timeline on screens less than 600px wide */
 @media screen and (max-width: 600px) {
   .experience {
-    min-height: 80vh;
+    min-height: auto;
   }
 
   .experience .timeline {
@@ -1118,7 +1124,7 @@ header .navbar ul li a:hover {
 /* contact section starts */
 .contact {
   background: #e5ecfb;
-  min-height: 60vh;
+  min-height: auto;
 }
 
 .contact .container {
@@ -1276,7 +1282,7 @@ form .button-area {
 /* contact section media queries starts */
 @media (max-width: 900px) {
   .contact {
-    min-height: 70vh;
+    min-height: auto;
   }
 
   .contact .container {
