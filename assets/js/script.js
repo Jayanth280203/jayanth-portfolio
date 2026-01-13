@@ -140,6 +140,9 @@ srtop.reveal('.education .box', { interval: 200 });
 // Projects section (updated from #work)
 srtop.reveal('.projects .timeline-item', { interval: 200 });
 
+// Experience section
+srtop.reveal('.experience .exp-card', { interval: 200 });
+
 // Certifications section
 srtop.reveal('.cert-card', { interval: 200 });
 
@@ -215,3 +218,50 @@ document.onkeydown = function (e) {
 
 })();
 
+/* ===== Experience Modal JS ===== */
+function openModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.style.display = "block";
+        document.body.style.overflow = "hidden"; // Prevent scrolling
+    }
+}
+
+function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.style.display = "none";
+        document.body.style.overflow = "auto"; // Restore scrolling
+    }
+}
+
+// Close modal when clicking outside of it
+window.addEventListener('click', function (event) {
+    if (event.target.classList.contains('modal')) {
+        event.target.style.display = "none";
+        document.body.style.overflow = "auto";
+    }
+});
+
+/* ===== Experience Track Loop Logic ===== */
+document.addEventListener("DOMContentLoaded", function () {
+    const track = document.querySelector(".experience-track");
+    if (track) {
+        const cards = track.querySelectorAll(".exp-card");
+        if (cards.length > 1) {
+            // Add looping class to enable animation
+            track.classList.add("looping");
+
+            // Clone cards for seamless marquee effect
+            cards.forEach(card => {
+                const clone = card.cloneNode(true);
+                track.appendChild(clone);
+            });
+
+            // Re-init tilt for cloned cards if needed
+            if (typeof VanillaTilt !== 'undefined') {
+                VanillaTilt.init(track.querySelectorAll(".tilt"), { max: 15 });
+            }
+        }
+    }
+});
