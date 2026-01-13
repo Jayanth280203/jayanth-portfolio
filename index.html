@@ -38,6 +38,7 @@
         <li><a href="#skills">Skills</a></li>
         <li><a href="#education">Education</a></li>
         <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -422,6 +423,25 @@
   </section>
   <!-- ====== End Certifications ====== -->
 
+  <!-- Experience Section Starts -->
+  <section class="experience" id="experience">
+    <h2 class="heading"><i class="fas fa-briefcase"></i> My <span>Experience</span></h2>
+
+    <div class="experience-container">
+      <div class="experience-track">
+        <!-- Card 1 -->
+        <div class="exp-card tilt">
+          <i class="fas fa-laptop-code"></i>
+          <h3>Data Science & Data Analysis Intern</h3>
+          <p class="company">Infyro (Trichy)</p>
+          <p class="duration">1 Month | Hybrid</p>
+          <div class="learn-more-btn" onclick="openModal('infyro-exp')">Learn More</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Experience Section Ends -->
+
   <!-- Projects Section Starts -->
   <section class="projects" id="projects">
     <h2 class="heading"><i class="fas fa-laptop-code"></i> My <span>Projects</span></h2>
@@ -587,6 +607,7 @@
         <a href="#skills"><i class="fas fa-chevron-circle-right"></i> skills</a>
         <a href="#education"><i class="fas fa-chevron-circle-right"></i> education</a>
         <a href="#certifications"><i class="fas fa-chevron-circle-right"></i> certifications</a>
+        <a href="#experience"><i class="fas fa-chevron-circle-right"></i> experience</a>
         <a href="#projects"><i class="fas fa-chevron-circle-right"></i> projects</a>
       </div>
 
@@ -616,6 +637,54 @@
   </section>
   <!-- footer section ends -->
 
+
+  <!-- Modal for Experience Details -->
+  <div id="infyro-exp" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('infyro-exp')">&times;</span>
+      <div class="modal-header">
+        <h2>Data Science & Data Analysis Internship</h2>
+        <p class="company">Infyro (Trichy) | Hybrid</p>
+        <p class="duration">Duration: 1 Month</p>
+      </div>
+      <div class="modal-body">
+        <h4>Overview</h4>
+        <p>I completed a structured Data Science & Data Analysis internship at Infyro, where I worked with real-time
+          datasets and followed an industry-oriented learning path covering Excel analytics, Python-based data analysis,
+          statistics, machine learning fundamentals, and Power BI dashboards. This internship strengthened my ability to
+          transform raw data into meaningful insights.</p>
+
+        <h4>What I Worked On</h4>
+        <ul>
+          <li>Performed Excel-based data analysis including cleaning, filtering, pivot analysis, and dashboard creation.
+          </li>
+          <li>Conducted Exploratory Data Analysis (EDA) using Python with visual and statistical interpretation.</li>
+          <li>Applied statistical hypothesis testing such as Z-test, T-test, and Chi-square test on real datasets.</li>
+          <li>Built interactive Power BI dashboards using DAX, KPIs, filters, and slicers.</li>
+          <li>Implemented basic machine learning models and evaluated them using accuracy, confusion matrix, and RMSE.
+          </li>
+        </ul>
+
+        <h4>Outcome & Learning</h4>
+        <p>This internship helped me gain hands-on, practical exposure to the complete data analytics workflow, from raw
+          data cleaning to visualization and insight generation. It also improved my analytical thinking, tool
+          proficiency, and understanding of how data-driven decisions are made in real-world scenarios.</p>
+
+        <h4>Tools Used</h4>
+        <div class="tools-list">
+          <span class="tool-tag">Excel</span>
+          <span class="tool-tag">Python</span>
+          <span class="tool-tag">Pandas</span>
+          <span class="tool-tag">NumPy</span>
+          <span class="tool-tag">Matplotlib</span>
+          <span class="tool-tag">Seaborn</span>
+          <span class="tool-tag">Power BI</span>
+          <span class="tool-tag">DAX</span>
+          <span class="tool-tag">Jupyter Notebook</span>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- scroll top btn -->
   <a href="#home" aria-label="ScrollTop" class="fas fa-angle-up" id="scroll-top"></a>
