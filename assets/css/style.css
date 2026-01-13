@@ -285,9 +285,9 @@ header .navbar ul li a:hover {
 }
 
 .home .btn {
-  margin-top: 1rem;
-  position: absolute;
-  line-height: 0;
+  margin-top: 2rem;
+  display: inline-block;
+  /* Changed from absolute for better layout control */
   padding: 1.6rem 3rem;
   border-radius: 4em;
   transition: 0.5s;
@@ -320,7 +320,8 @@ header .navbar ul li a:hover {
 /* social icons start */
 .socials {
   position: relative;
-  margin-top: 9rem;
+  margin-top: 2rem;
+  /* Reduced from 9rem for better flow */
 }
 
 .socials .social-icons {
@@ -380,25 +381,56 @@ header .navbar ul li a:hover {
 /* social icons end */
 
 /* hero media queries starts*/
-@media (max-width: 450px) {
-  .home .btn {
-    margin: 4rem 0;
+@media (max-width: 991px) {
+  .home .image img {
+    margin-left: 0;
+    width: 60%;
+  }
+}
+
+@media (max-width: 768px) {
+  .home {
+    flex-direction: column-reverse;
+    /* Put image at the top or bottom? The image 1768325200827 showing image at bottom overlap. Moving it top might be better or just fixing overlap. */
+    text-align: center;
+    padding-top: 10rem;
+    min-height: auto;
   }
 
-  .socials {
-    margin-top: 12rem;
+  .home .content {
+    flex: 1 1 auto;
+    width: 100%;
+    padding: 2rem;
+  }
+
+  .home .image {
+    flex: 1 1 auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 
   .home .image img {
-    margin-top: -12rem;
+    width: 60%;
+    margin: 2rem 0;
+  }
+
+  .home .content h2 {
+    font-size: 3.5rem;
   }
 
   .home .content p {
-    font-size: 2.2rem;
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .home .image img {
+    width: 80%;
   }
 
-  .home .content p span {
-    font-size: 2.2rem;
+  .home .content h2 {
+    font-size: 3rem;
   }
 }
 
