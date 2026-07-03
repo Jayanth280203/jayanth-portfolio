@@ -243,25 +243,5 @@ window.addEventListener('click', function (event) {
     }
 });
 
-/* ===== Experience Track Loop Logic ===== */
-document.addEventListener("DOMContentLoaded", function () {
-    const track = document.querySelector(".experience-track");
-    if (track) {
-        const cards = track.querySelectorAll(".exp-card");
-        if (cards.length > 1) {
-            // Add looping class to enable animation
-            track.classList.add("looping");
+/* ===== Experience Track — static layout, no cloning needed ===== */
 
-            // Clone cards for seamless marquee effect
-            cards.forEach(card => {
-                const clone = card.cloneNode(true);
-                track.appendChild(clone);
-            });
-
-            // Re-init tilt for cloned cards if needed
-            if (typeof VanillaTilt !== 'undefined') {
-                VanillaTilt.init(track.querySelectorAll(".tilt"), { max: 15 });
-            }
-        }
-    }
-});
