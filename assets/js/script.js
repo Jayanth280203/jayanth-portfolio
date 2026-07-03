@@ -76,7 +76,8 @@ var typed = new Typed(".typing-text", {
     typeSpeed: 50,
     backSpeed: 25,
     backDelay: 500,
-    showCursor: false
+    showCursor: false,
+    contentType: 'null'
 });
 
 // --- Fetch skills from json ---
