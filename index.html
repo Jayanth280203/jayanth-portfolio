@@ -433,14 +433,28 @@
 
     <div class="experience-container">
       <div class="experience-track">
-        <!-- Card 1 -->
+
+        <!-- Card 1 — Current Job: Alize Software Services -->
+        <div class="exp-card tilt exp-card--current">
+          <div class="exp-card-logo-wrap">
+            <img src="./assets/images/alize_logo.png" alt="Alize Software Services LLP" class="exp-company-logo">
+            <span class="exp-badge-live">&#x25CF; Current</span>
+          </div>
+          <h3>Executive — Tech &amp; Business</h3>
+          <p class="company">Alize Software Services LLP</p>
+          <p class="duration">April 2026 – Present &nbsp;|&nbsp; Thanjavur</p>
+          <div class="learn-more-btn" onclick="openModal('alize-exp')">Learn More</div>
+        </div>
+
+        <!-- Card 2 — Infyro Internship -->
         <div class="exp-card tilt">
           <i class="fas fa-laptop-code"></i>
-          <h3>Data Science & Data Analysis Intern</h3>
+          <h3>Data Science &amp; Data Analysis Intern</h3>
           <p class="company">Infyro (Trichy)</p>
           <p class="duration">1 Month | Hybrid</p>
           <div class="learn-more-btn" onclick="openModal('infyro-exp')">Learn More</div>
         </div>
+
       </div>
     </div>
   </section>
@@ -641,6 +655,65 @@
   </section>
   <!-- footer section ends -->
 
+  <!-- Modal — Alize Software Services -->
+  <div id="alize-exp" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('alize-exp')">&times;</span>
+      <div class="modal-header modal-header--alize">
+        <img src="./assets/images/alize_logo.png" alt="Alize Software Services LLP" class="modal-company-logo">
+        <div>
+          <h2>Executive — Technology &amp; Business</h2>
+          <p class="company">Alize Software Services LLP &nbsp;|&nbsp; Thanjavur, TN</p>
+          <p class="duration">April 2026 – Present &nbsp;&bull;&nbsp; Full-Time</p>
+          <span class="modal-badge-live">&#x25CF;&nbsp; Currently Working Here</span>
+        </div>
+      </div>
+      <div class="modal-body">
+        <h4>Role Overview</h4>
+        <p>Working as an Executive by bridging technology and business strategy at Alize Software Services LLP — a software company based in Thanjavur. The role spans two key domains: Full-Stack Development and Business Operations, enabling end-to-end ownership of digital products and growth initiatives.</p>
+
+        <h4>Full-Stack Development</h4>
+        <ul>
+          <li>Designing, developing, and deploying web applications and digital solutions for clients and internal operations.</li>
+          <li>Building responsive front-end interfaces using HTML, CSS, and JavaScript frameworks.</li>
+          <li>Developing and maintaining back-end services, APIs, and databases to support business workflows.</li>
+          <li>Ensuring seamless user experience across web and mobile platforms.</li>
+        </ul>
+
+        <h4>Business &amp; Growth Strategy</h4>
+        <ul>
+          <li>Integrating technology with business strategies to drive organizational growth.</li>
+          <li>Driving growth through digital marketing campaigns and data-driven decision making.</li>
+          <li>Identifying market opportunities and aligning technical solutions with business goals.</li>
+          <li>Collaborating with cross-functional teams to plan and execute digital transformation initiatives.</li>
+        </ul>
+
+        <h4>Key Responsibilities</h4>
+        <ul>
+          <li>Developing websites and applications that directly support business operations and user experience.</li>
+          <li>Analyzing business data to generate insights that guide strategy and product direction.</li>
+          <li>Managing end-to-end delivery of digital projects from ideation to deployment.</li>
+          <li>Bridging the gap between technical execution and business objectives.</li>
+        </ul>
+
+        <h4>Tech &amp; Tools</h4>
+        <div class="tools-list">
+          <span class="tool-tag">HTML</span>
+          <span class="tool-tag">CSS</span>
+          <span class="tool-tag">JavaScript</span>
+          <span class="tool-tag">React</span>
+          <span class="tool-tag">Node.js</span>
+          <span class="tool-tag">Python</span>
+          <span class="tool-tag">MySQL</span>
+          <span class="tool-tag">Git</span>
+          <span class="tool-tag">GitHub</span>
+          <span class="tool-tag">Digital Marketing</span>
+          <span class="tool-tag">Data Analytics</span>
+          <span class="tool-tag">Business Strategy</span>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Modal for Experience Details -->
   <div id="infyro-exp" class="modal">

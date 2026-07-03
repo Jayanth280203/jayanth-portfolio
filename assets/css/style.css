@@ -2434,3 +2434,94 @@ form .button-area {
     font-size: 1.8rem;
   }
 }
+
+/* ── Alize card – logo + live badge ── */
+.exp-card--current {
+  border: 2px solid #7c3aed;
+  background: linear-gradient(135deg, #faf5ff 0%, #ede9fe 100%);
+  position: relative;
+}
+
+.exp-card--current:hover {
+  box-shadow: 0 20px 50px rgba(124, 58, 237, 0.3);
+  border-color: #7c3aed;
+}
+
+.exp-card-logo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.exp-company-logo {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.exp-badge-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #dcfce7;
+  color: #15803d;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 0.3rem 0.9rem;
+  border-radius: 20px;
+  white-space: nowrap;
+  animation: pulse-green 2s ease-in-out infinite;
+}
+
+@keyframes pulse-green {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.65; }
+}
+
+/* ── Alize modal header ── */
+.modal-header--alize {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #ede9fe;
+}
+
+.modal-company-logo {
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.modal-badge-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #dcfce7;
+  color: #15803d;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 0.35rem 1rem;
+  border-radius: 20px;
+  margin-top: 0.6rem;
+  animation: pulse-green 2s ease-in-out infinite;
+}
+
+.modal-header--alize h2 {
+  color: #5b21b6;
+}
+
+@media (max-width: 600px) {
+  .modal-header--alize {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .modal-company-logo {
+    height: 50px;
+  }
+}
